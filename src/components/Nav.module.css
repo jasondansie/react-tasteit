@@ -1,0 +1,30 @@
+.nav{
+    background-color: gray;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.4;
+}
+
+.nav ul li a:active {
+    color: orange;
+    text-decoration: underline;
+}
+
+.nav ul li a:hover {
+    color: orange;
+    text-decoration: underline;
+}
