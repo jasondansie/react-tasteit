@@ -1,10 +1,15 @@
 .nav{
     background-color: gray;
-    height: 5vh;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.nav img{
+    height: 10.5vh;
+    width: 5vw;
+    background: url("../images/TasteIt.png") fixed center center/cover;
 }
 
 .nav ul li {
@@ -20,11 +25,11 @@
 }
 
 .nav ul li a:active {
-    color: orange;
+    color: rgb(127, 126, 124);
     text-decoration: underline;
 }
 
 .nav ul li a:hover {
-    color: orange;
+    color: rgb(88, 87, 86);
     text-decoration: underline;
 }

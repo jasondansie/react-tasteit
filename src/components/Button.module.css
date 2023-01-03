@@ -1,0 +1,9 @@
+.button{
+    border: 1px solid gray;
+    width: 30vw;
+    height: 20vh;
+}
+
+.button h3, p{
+    margin: 2vh;
+}
