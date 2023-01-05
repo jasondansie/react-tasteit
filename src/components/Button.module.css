@@ -1,9 +1,11 @@
-.button{
+.button {
     border: 1px solid gray;
     width: 30vw;
-    height: 20vh;
+    height: 22vh;
+    min-height: 22vh;
 }
 
-.button h3, p{
+.button h3,
+p {
     margin: 2vh;
 }

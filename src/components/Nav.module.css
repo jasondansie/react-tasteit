@@ -1,4 +1,4 @@
-.nav{
+.nav {
     background-color: gray;
     height: 10vh;
     display: flex;
@@ -6,12 +6,14 @@
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     height: 10.5vh;
     width: 5vw;
 }
-.nav img{   
-    background: url("../images/TasteIt.png") fixed center center/cover;
+
+.logo img {
+    background: url("../../public/images/TasteIt.png");
 }
 
 .nav ul li {

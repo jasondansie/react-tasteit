@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const menuPath = path.join(__dirname, '/public/index.html');
+const menuPath = path.join(__dirname, 'http://localhost:3000');
 
 app.get('/', (req, res) => res.sendFile(menuPath));
 

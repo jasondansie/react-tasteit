@@ -33,6 +33,7 @@ module.exports = class Datastorage{
     }
 
     insert(entry){
+        console.log("entry:", entry);
         return new Promise(async (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
