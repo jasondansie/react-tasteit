@@ -37,39 +37,14 @@ app.get('/getSingleRecipe/:id', (req, res) =>{
     .catch(error => sendErroPage(res, error))
 });
 
-app.get('/inputForm', (req, res) =>  
-res.render('form', {
-    title: "Add recipe",
-    header1: "Add a new recipe",
-    action: "/input",
-    number: {value: "", readonly: ""},
-    name: {value: "", readonly: ""},
-    quantity: {value: "", readonly: ""},
-    rating: {value: "", readonly: ""},
-    genre: {value: "", readonly: ""},
-})
-);
-
 app.post('/input', (req, res) => {
     if (!req.body) return res.statusCode(500);
 
+    console.log(req.body);
     dataStorage.insert(req.body)
     .then(status => sendStatusPage(res, status))
     .catch(error => sendErroPage(res, error))
 })
-
-app.get('/updateForm', (req, res) =>  
-res.render('form', {
-    title: "Update recipe",
-    header1: "Update recipe data",
-    action: "/updateData",
-    number: {value: "", readonly: ""},
-    name: {value: "", readonly: "readonly"},
-    quantity: {value: "", readonly: "readonly"},
-    rating: {value: "", readonly: "readonly"},
-    genre: {value: "", readonly: "readonly"},
-})
-);
 
 app.post('/updateData', (req, res) => {
     if(!req.body) return res.sendStatus(500);
@@ -96,14 +71,6 @@ app.post('/update', (req, res) => {
     .then(status => sendStatusPage(res, status))
     .catch(error => sendErroPage(res, error))
 });
-
-app.get('/removeRecipe', (req, res) => 
-    res.render('getSingleRecipe',{
-        title: 'Remove',
-        header1:'Remove',
-        action:'/removeRecipe'
-    })
-);
 
 app.post('/removeRecipe', (req, res) => {
     if (!req.body) return res.sendStatus(500);
