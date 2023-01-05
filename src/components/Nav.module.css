@@ -6,9 +6,11 @@
     align-items: center;
     justify-content: space-between;
 }
-.nav img{
+.logo{
     height: 10.5vh;
     width: 5vw;
+}
+.nav img{   
     background: url("../images/TasteIt.png") fixed center center/cover;
 }
 

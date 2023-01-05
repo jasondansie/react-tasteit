@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "name": "Star Adventure",
+        "quantity": 1,
+        "rating": "****",
+        "genre": "FPS"
+    },
+    {
+        "id": 2,
+        "name": "Amnesia 2030",
+        "quantity": 25,
+        "rating": "***",
+        "genre": "board game"
+    },
+    {
+        "id": 3,
+        "name": "Raft 2018",
+        "quantity": 25,
+        "rating": "*****",
+        "genre": "Survival"
+    },
+    {
+        "id": 4,
+        "name": "Future 2525",
+        "quantity": 100,
+        "rating": "*",
+        "genre": "adventure"
+    },
+    {
+        "id": 5,
+        "name": "The Rise and Fall of an Empire 22",
+        "quantity": 30,
+        "rating": "**",
+        "genre": "platformer"
+    },
+    {
+        "id": 6,
+        "name": "Ladybirds",
+        "quantity": 7,
+        "rating": "*",
+        "genre": "strategy"
+    },
+    {
+        "id": 7,
+        "name": "U.F.O",
+        "quantity": 150,
+        "rating": "**",
+        "genre": "brain-teaser"
+    },
+    {
+        "id": 8,
+        "name": "Gold Rush",
+        "quantity": 5,
+        "rating": "*****",
+        "genre": "Simulator"
+    },
+    {
+        "id": 9,
+        "name": "Valhiem",
+        "quantity": 10,
+        "rating": "****",
+        "genre": "survival"
+    },
+    {
+        "id": 10,
+        "name": "Ranch Simulator",
+        "quantity": 5,
+        "rating": "****",
+        "genre": "Simulation"
+    },
+    {
+        "id": 11,
+        "name": "Starsand",
+        "quantity": 3,
+        "rating": "****",
+        "genre": "survival"
+    }
+]
