@@ -60,11 +60,15 @@ const deleteEntry = async (id) => {
 
 // addToStorage(
 //     {
-//         "number":"8",
-//         "name":"Gold Rush",
-//         "quantity":20,
-//         "rating":"*****",
-//         "genre":"Simulator"
+//         "id": 5,
+//         "name": "Pizza",
+//         "author": "",
+//         "country": "Peru",
+//         "flag": "https://flagcdn.com/w320/pe.png",
+//         "Description": "FPS",
+//         "image": "https://www.w3schools.com/howto/img_avatar.png",
+//         "ingredients": "",
+//         "instructions": ""
 //     }
 // ).then(console.log).catch(console.log);
 

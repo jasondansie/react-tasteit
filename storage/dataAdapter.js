@@ -4,7 +4,6 @@
 const adapt = (item) => {
     return Object.assign(item, {
         id: +item.id,
-        quantity: +item.quantity
     });
 }
 
