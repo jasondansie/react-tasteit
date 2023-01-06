@@ -65,3 +65,20 @@ video {
     align-items: center;
     margin-top: 4vh;
 }
+.herobutton{
+    background-color: rgba(10, 9, 9, .1);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 6px;  
+}
+
+a {
+    text-decoration: none;
+}

@@ -7,10 +7,20 @@ const Recipes = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://restcountries.com/v3.1/all')
+        axios.get('http://localhost:3030/all')
             .then(
                 (res) => setData(res.data));
     }, []);
+
+    // const reciptList = data.map((recipe) => {
+    //     return (
+    //         <Card
+    //             flag={recipe.flag}
+    //             image={recipe.image}
+    //             title={recipe.title}
+    //         />
+    //     );
+    // });
 
     return (
         <div className={classes.recipe_content}>
@@ -18,21 +28,13 @@ const Recipes = () => {
            <input type="text" size={40} />
             <h2>Our recipes</h2>
            <div className={classes.recipes}>
-            <Card
-                flag="https://flagcdn.com/w320/pe.png"
-                image="/images/TasteIt.png"
-                title="First Card"
-            />
-            <Card
-                flag="https://flagcdn.com/w320/pe.png"
-                image="https://www.w3schools.com/howto/img_avatar.png"
-                title="Second Card"
-            />
-            <Card
-                flag="https://flagcdn.com/w320/pe.png"
-                image="https://www.w3schools.com/howto/img_avatar.png"
-                title="Third Card"
-            />
+           <select name="country" id="country  ">
+
+                {data.map((recipe) => (
+                    <option value={recipe.name} key={recipe.name}>{recipe.name}</option>
+                ))}
+
+            </select>        
            </div>
         </div>
     );

@@ -15,7 +15,7 @@ const Home = () => {
             <div className={classes.heropanel__content}>
                 <h1>TasteIT</h1>
                 <p>TasteIT is a recipe app which is made in REACT22S groug React Lessons</p>
-                <button><NavLink to="/recipes">Browse recipes</NavLink></button>
+                <button className={classes.herobutton}><NavLink to="/recipes">Browse recipes</NavLink></button>
             </div>
             <h2>Looking for recipes?</h2>
             <div className={classes.buttons}>
@@ -35,7 +35,7 @@ const Home = () => {
                     title="Want to know more about our projects?"
                     description="Visit our programme homepage."
                     linkText="Business College Helsinki hompage"
-                    link="https://www.bc.fi/"
+                    link="http://bc.fi/"
                 />
             </div>
         </div>
