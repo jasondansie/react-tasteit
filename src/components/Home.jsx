@@ -6,7 +6,7 @@ import classes from './Home.module.css'
 
 const Home = () => {
     return (
-        <div>
+        <div className={classes.home}>
             <video loop muted autoPlay playsInline poster="" className="background-video">
                 <source src="./burgers.mp4" type="video/mp4"></source>
 

@@ -1,0 +1,16 @@
+.recipe_content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    margin: 0;
+}
+
+.recipes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    margin-top: 25px;
+    
+}

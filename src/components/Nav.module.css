@@ -7,13 +7,8 @@
     justify-content: space-between;
 }
 
-.logo {
-    height: 10.5vh;
-    width: 5vw;
-}
-
 .logo img {
-    background: url("../../public/images/TasteIt.png");
+    width: 6.5vw;
 }
 
 .nav ul li {

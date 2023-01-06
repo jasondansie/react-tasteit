@@ -28,7 +28,7 @@ const AddNewRecipe = () => {
                     <select name="country" id="country  ">
 
                         {data.map((country) => (
-                            <option value={country.name.common} keys={country.area}>{country.name.common}</option>
+                            <option value={country.name.common} key={country.name.common}>{country.name.common}</option>
                         ))}
 
                     </select>

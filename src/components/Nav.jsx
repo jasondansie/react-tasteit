@@ -6,8 +6,8 @@ import classes from './Nav.module.css';
 const Nav = () => {
     return (
         <nav className={classes.nav}>
-            <div className='logo'>
-            <NavLink to="/"><img  alt=""/></NavLink>
+            <div className={classes.logo}>
+            <NavLink to="/"><img src='/images/TasteIt.png'  alt=""/></NavLink>
             </div>           
             <ul>
                 <li><NavLink to="/">Home</NavLink></li>
