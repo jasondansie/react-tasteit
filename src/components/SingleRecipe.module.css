@@ -18,6 +18,7 @@
 .singleRecipe .prep{
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-evenly;
 }
 .singleRecipe img{
     width: 75%;
