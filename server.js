@@ -40,7 +40,6 @@ app.get('/getSingleRecipe/:id', (req, res) =>{
 app.post('/input', (req, res) => {
     if (!req.body) return res.statusCode(500);
 
-    console.log(req.body);
     dataStorage.insert(req.body)
     .then(status => sendStatusPage(res, status))
     .catch(error => sendErroPage(res, error))

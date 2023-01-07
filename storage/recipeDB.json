@@ -2,40 +2,40 @@
     {
         "id": 1,
         "name": "Pancakes",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
         "Description": "FPS",
         "image": "https://www.w3schools.com/howto/img_avatar.png",
-        "ingredients": "",
-        "instructions": ""
+        "ingredients": " flour, milk, eggs",
+        "instructions": "mix it, mix it real good"
     },
     {
         "id": 2,
         "name": "Spaghti",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
-        "Description": "FPS",
+        "Description": "it's a da spagat",
         "image": "/images/TasteIt.png",
-        "ingredients": "",
-        "instructions": ""
+        "ingredients": "sauce, noodles, meat",
+        "instructions": "cook it"
     },
     {
         "id": 3,
         "name": "Lasagna",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
-        "Description": "FPS",
+        "Description": "Yummie lasagna",
         "image": "https://www.w3schools.com/howto/img_avatar.png",
-        "ingredients": "",
-        "instructions": ""
+        "ingredients": "noodles, sauce, meat, cheese",
+        "instructions": "bake it really good"
     },
     {
         "id": 4,
         "name": "Pancakes",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
         "Description": "FPS",
@@ -46,7 +46,7 @@
     {
         "id": 5,
         "name": "Pizza",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
         "Description": "FPS",
@@ -57,7 +57,7 @@
     {
         "id": 6,
         "name": "Pizza",
-        "author": "",
+        "author": "Jason",
         "country": "Peru",
         "flag": "https://flagcdn.com/w320/pe.png",
         "Description": "FPS",
@@ -67,36 +67,24 @@
     },
     {
         "id": 7,
-        "name": "CSS",
-        "author": "adfads",
-        "country": "Saint Vincent and the Grenadines",
-        "description": "fagfdad",
-        "image": "adads",
-        "ingredients": "adfsf",
-        "instructions": "adfs",
-        "quantity": null
+        "name": "goulash",
+        "author": "Jason",
+        "country": "Finland",
+        "flag": "https://flagcdn.com/w320/fi.png",
+        "description": "yummy stuff",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": "noodles",
+        "instructions": "boil"
     },
     {
         "id": 8,
-        "name": "sfsgndnfhga",
-        "author": "sfghdyjuryf",
-        "country": "https://flagcdn.com/w320/vc.png",
-        "description": "rsgdf",
-        "image": "sfdgs",
-        "ingredients": "yrhetdhfgb",
-        "instructions": "sfdgsdfgsdf",
-        "quantity": null
-    },
-    {
-        "id": 9,
-        "name": "",
-        "author": "",
-        "country": "Faroe Islands",
-        "flag": "https://flagcdn.com/w320/fo.png",
-        "description": "",
-        "image": "",
-        "ingredients": "",
-        "instructions": "",
-        "quantity": null
+        "name": "Tacos",
+        "author": "Jaosn",
+        "country": "Ireland",
+        "flag": "https://flagcdn.com/w320/ie.png",
+        "description": "it's food",
+        "image": "./images/barbecue.jpg",
+        "ingredients": "good yummies",
+        "instructions": "hot sauce"
     }
 ]

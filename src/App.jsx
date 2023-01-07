@@ -4,6 +4,8 @@ import Layout from './pages/Layout';
 import Home from './components/Home';
 import Recipes from './components/Recipes';
 import AddNewRecipe from './components/AddNewRecipe';
+import SingleRecipe from './components/SingleRecipe';
+
 
 const App = () => {
   return (
@@ -11,8 +13,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />}></Route>
-          <Route path='/:pageType' element={<Recipes />} />
+          <Route path='/Recipes' element={<Recipes />} />
           <Route path='/AddNewRecipe' element={<AddNewRecipe />}></Route>
+          <Route path='/SingleRecipe/:id' element={<SingleRecipe />}></Route>
         </Route>
       </Routes>         
     </BrowserRouter>

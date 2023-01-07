@@ -1,9 +1,10 @@
 .card {
-  display: flex;
-  flex-direction: column;
   position: relative;
-  width: 20%;
-  height: 100px;
+  flex-direction: column;
+  width: 250px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 
@@ -13,7 +14,7 @@
   position: absolute;
   top: -2rem;
   right: -2rem;
-  width: 5vw;
+  width: 5.5vw;
   height: 8vh;
   margin: 1rem;
   border-radius: 50%;
@@ -34,7 +35,15 @@
   border-radius: 6px;
 }
 
+.mainImage{
+  min-height: 36.5vh;
+  width: 100%;
+}
+
 .card .container {
   padding: 10px;
-  border: 1px solid black;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

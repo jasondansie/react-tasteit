@@ -14,35 +14,21 @@ const Recipes = () => {
                 });
     }, []);
 
-    const reciptList = data.map((recipe) => {
-        return (
-            <Card
-                key={recipe.id}
-                flag={recipe.flag}
-                image={recipe.image}
-                title={recipe.name}
-            />
-        );
-    });
-
     return (
-        <div className={classes.recipe_content}>
-            <p>Serch for a recipe</p>
-            <input type="text" size={40} />
-            <h2>Our recipes</h2>
-            <div className={classes.recipes}>
-                {
-                    data.map((recipe) => (
+        <div className={classes.bg} >
+                <h1>Our Recipes</h1>
+                <div className={classes.cards}>
+                    {data.map((card) => (
                         <Card
-                            key={recipe.id}
-                            flag={recipe.flag}
-                            image={recipe.image}
-                            title={recipe.name}
+                        key={card.id}
+                        flag={card.flag}
+                        image={card.image}
+                        title={card.name}
+                        link={`/SingleRecipe/${card.id}`}
                         />
-                    ))
-                }
+                    ))}
+                </div>
             </div>
-        </div>
     );
 };
 

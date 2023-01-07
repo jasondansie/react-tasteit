@@ -33,7 +33,7 @@ const AddNewRecipe = () => {
             <h1>Add a new recipe</h1>
             <form action="http://localhost:3030/input" method='POST'>
                 <div className={classes.formInput}>
-                    <input type="text" id="id" name="id" size="40" placeholder={uid} defaultValue={uid}></input>
+                    <input type="text" id="id" name="id" size="40" placeholder={uid} defaultValue={uid} hidden></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="name">Name:</label>
@@ -62,7 +62,7 @@ const AddNewRecipe = () => {
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="image">Image:</label>
-                    <input type="text" id="image" name="image" size="10"></input>
+                    <input type="text" id="image" name="image" size="10" defaultValue={'./images/barbecue.jpg'}></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="ingredients">Ingredients:</label>

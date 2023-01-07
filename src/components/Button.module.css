@@ -1,11 +1,27 @@
 .button {
     border: 1px solid gray;
     width: 30vw;
-    height: 22vh;
-    min-height: 22vh;
+    min-height: 23vh;
+    margin-bottom: 10px;
 }
 
 .button h3,
 p {
-    margin: 2vh;
+    margin:1.5vh;
+}
+
+
+/* visited link */
+a:visited {
+    text-decoration:none;
+}
+
+/* mouse over link */
+a:hover {
+    text-decoration:none;
+}
+
+/* selected link */
+a:active {
+    text-decoration:none;
 }

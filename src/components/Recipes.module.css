@@ -1,12 +1,7 @@
-.recipe_content {
+.cards {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.recipes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+   
 }

@@ -1,10 +1,16 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+}
 video {
     margin-top: 10vh;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    height: 50%;
+    height: 50vh;
     width: 100%;
     z-index: -5;
 }
@@ -53,18 +59,6 @@ video {
     text-transform: uppercase;
 }
 
-.home h2 {
-    margin-top: 25vh;
-    text-align: center;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 4vh;
-}
 .herobutton{
     background-color: rgba(10, 9, 9, .1);
     border: none;
@@ -79,6 +73,21 @@ video {
     border-radius: 6px;  
 }
 
-a {
-    text-decoration: none;
+/* unvisited link */
+a:link {
+    text-decoration:none;
+}
+
+.home_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 8vh;
 }
