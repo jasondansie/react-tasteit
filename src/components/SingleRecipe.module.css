@@ -1,0 +1,25 @@
+.singleRecipe{
+    display: flex;
+    flex-direction: column;
+}
+
+.singleRecipe h1{
+    text-align: center;
+}
+
+.singleRecipe .middle{
+    display: flex;
+    flex-direction: row;
+}
+.singleRecipe .descript{
+    width: 25vh;
+}
+
+.singleRecipe .prep{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.singleRecipe img{
+    width: 75%;
+    margin-right: 5vw;
+}
