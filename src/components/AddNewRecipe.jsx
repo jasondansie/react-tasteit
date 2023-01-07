@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import classes from './AddNewRecipe.module.css'
+import IngredientInput from './IngredientInput';
 
 const AddNewRecipe = () => {
     const [data, setData] = useState([]);
     const [recipe, setRecipe] = useState([]);
+    const [ingredients, setIngredients] = useState([]);
     const [flag, setFlag] = useState([]);
     const [uid, setUid] = useState([]);
+    const [counter, setCounter] = useState(1);
 
     useEffect(() => {
         axios.get('https://restcountries.com/v3.1/all')
@@ -20,18 +23,52 @@ const AddNewRecipe = () => {
                 });
     }, []);
 
+    const addIngredients = () => {
+        setCounter(counter + 1);
+        console.log("counter", counter);
+        let ingred = ingredients;
+        ingred.push(<IngredientInput
+            key={counter}
+        />);
+        console.log("ingred", ingred);
+
+        setIngredients(ingred);
+
+
+        //createIngredientsInput();
+    }
+
+    const createIngredientsInput = () => {
+
+        for (let i = 0; i < counter; i++) {
+            if (ingredients.length === 0) {
+                setIngredients(<IngredientInput />);
+            }
+            else {
+                setIngredients(ingredients + <IngredientInput />);
+            }
+
+        }
+        console.log("ingerdientInput", ingredients);
+
+    }
 
     const onChangeHandler = (e) => {
         let flag = data.filter(country => country.name.common.includes(e.target.value))
-        console.log("flag", flag[0].flags.png);
         setFlag(flag[0].flags.png);
         setUid(recipe.length + 1);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+    };
+
+
     return (
         <div className={classes.formContent}>
             <h1>Add a new recipe</h1>
-            <form action="http://localhost:3030/input" method='POST'>
+            <form action="http://localhost:3030/input" method='POST' onSubmit={handleSubmit}>
                 <div className={classes.formInput}>
                     <input type="text" id="id" name="id" size="40" placeholder={uid} defaultValue={uid} hidden></input>
                 </div>
@@ -62,12 +99,16 @@ const AddNewRecipe = () => {
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="image">Image:</label>
-                    <input type="text" id="image" name="image" size="10" defaultValue={'./images/barbecue.jpg'}></input>
+                    <input type="text" id="image" name="image" size="10" defaultValue={'/images/barbecue.jpg'}></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="ingredients">Ingredients:</label>
-                    <input type="text" id="ingredients" name="ingredients" size="10"></input>
+
                 </div>
+                <IngredientInput />
+                <div>{ingredients}</div>
+
+                <button onClick={() => addIngredients()}>Add more</button>
                 <div className={classes.formInput}>
                     <label htmlFor="instructions">Instructions:</label>
                     <input type="text" id="instructions" name="instructions" size="10"></input>

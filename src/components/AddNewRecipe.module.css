@@ -29,3 +29,23 @@
     margin: 20px 0 50px;
 
 }
+
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

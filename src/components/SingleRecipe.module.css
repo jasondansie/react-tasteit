@@ -1,26 +1,28 @@
-.singleRecipe{
+.singleRecipe {
     display: flex;
     flex-direction: column;
 }
 
-.singleRecipe h1{
+.singleRecipe h1 {
     text-align: center;
 }
 
-.singleRecipe .middle{
+.singleRecipe .middle {
     display: flex;
     flex-direction: row;
 }
-.singleRecipe .descript{
+
+.singleRecipe .descript {
     width: 25vh;
 }
 
-.singleRecipe .prep{
+.singleRecipe .prep {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
 }
-.singleRecipe img{
-    width: 75%;
+
+.singleRecipe img {
+    width: 50%;
     margin-right: 5vw;
 }

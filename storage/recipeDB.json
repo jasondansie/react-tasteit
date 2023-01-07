@@ -83,7 +83,7 @@
         "country": "Ireland",
         "flag": "https://flagcdn.com/w320/ie.png",
         "description": "it's food",
-        "image": "./images/barbecue.jpg",
+        "image": "/images/barbecue.jpg",
         "ingredients": "good yummies",
         "instructions": "hot sauce"
     }

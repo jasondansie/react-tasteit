@@ -14,7 +14,7 @@ const Home = () => {
 
             <div className={classes.heropanel__content}>
                 <h1>TasteIT</h1>
-                <p>TasteIT is a recipe app which is made in REACT22S groug React Lessons</p>
+                <p>TasteIT is a recipe app which is made in REACT22S group React Lessons</p>
                 <button className={classes.herobutton}><NavLink to="/recipes">Browse recipes</NavLink></button>
             </div>
             <div className={classes.home_content}>
