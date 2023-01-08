@@ -40,7 +40,8 @@ app.get('/getSingleRecipe/:id', (req, res) =>{
 app.post('/input', (req, res) => {
     if (!req.body) return res.statusCode(500);
 
-    dataStorage.insert(req.body)
+    console.log("calling input with:", JSON.parse(JSON.stringify(req.body)));
+    dataStorage.insert(JSON.parse(JSON.stringify(req.body)))
     .then(status => sendStatusPage(res, status))
     .catch(error => sendErroPage(res, error))
 })

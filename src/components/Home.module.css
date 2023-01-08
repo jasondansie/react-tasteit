@@ -71,7 +71,7 @@ video {
 }
 
 .herobutton {
-    background-color: rgba(23, 23, 23, 0.2);
+    background-color: rgba(28, 25, 25, 0.4);
     padding: 10px 20px;
     text-align: center;
     display: inline-block;
@@ -80,6 +80,7 @@ video {
     cursor: pointer;
     border: 1px solid black;
     border-radius: 6px;
+
 }
 
 

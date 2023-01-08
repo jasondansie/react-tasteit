@@ -60,7 +60,7 @@ const AddNewRecipe = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
 
     };
 

@@ -1,0 +1,51 @@
+.formContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.formContent h1 {
+    margin: 10px 0 10px;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.formContent label {
+    margin-bottom: 10px;
+}
+
+.formContent input {
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.formContent button {
+    margin: 20px 0 50px;
+
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

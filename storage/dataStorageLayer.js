@@ -84,4 +84,9 @@ module.exports = class Datastorage{
             }
         })
     }
+
+    getSize(){
+        let data = getAllFromStorage();
+        return data.getSize();
+     }
 }
