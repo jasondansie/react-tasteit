@@ -74,13 +74,13 @@ const Form = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        let str1 = JSON.stringify([...formValues]);
+        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&athor=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
         str1.replace("[", "");
         alert(str1);
         console.log("formvalues", str1);
-        console.log("formvalues", JSON.stringify([...formValues]));
+        console.log("formvalues", formValues);
         axios
-            .post("http://localhost:3030/input", JSON.stringify(formValues))
+            .post("http://localhost:3030/input", str1)
             .then((res) => console.log(res))
             .catch((error) => console.log(error))
 
@@ -90,7 +90,7 @@ const Form = () => {
     return (
         <div className={classes.formContent}>
             <h1>Add a new recipe</h1>
-            <form onSubmit={handleSubmit}>
+            <form action="" method="" onSubmit={handleSubmit}>
                 <div className={classes.formInput}>
                     <input type="text" id="id" name="id" size="40" placeholder={uid} defaultValue={uid} hidden></input>
                 </div>

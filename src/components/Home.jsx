@@ -30,7 +30,7 @@ const Home = () => {
                         title="Add recipes"
                         description="Recipes from your country missing? No worries, add on!"
                         linkText="Add a recipe"
-                        link="/addNewRecipe"
+                        link="/Form"
                     />
                     <Button
                         title="Want to know more about our projects?"

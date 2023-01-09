@@ -16,8 +16,7 @@ const Recipes = () => {
                 (res) => {
                     setData(res.data.result);
                     setRecipeList(res.data.result);
-                });
-                
+                });            
     }, []);     
 
     const searchHandler = (e) => {
@@ -27,21 +26,21 @@ const Recipes = () => {
 
         let foundRecipe = data.filter(recipe => 
             recipe.name.toLowerCase().includes(search.string.toLowerCase()));         
-             setRecipeList(foundRecipe); 
-        console.log("search", search.string.length);
+             
+        setRecipeList(foundRecipe); 
+        
         if (search.string.length === 1) {
             setRecipeList(data);
         }    
     }
 
     const dispalyRecipe = () =>{
-        console.log("recipeList", recipeList);
         return recipeList.map((card) => (
             <Card
             key={card.id}
             flag={card.flag}
             image={card.image}
-            title={card.name}
+            title={card.title}
             link={`/SingleRecipe/${card.id}`}
             />
         ))
@@ -60,6 +59,5 @@ const Recipes = () => {
             </div>
     );
 };
-
 
 export default Recipes;
