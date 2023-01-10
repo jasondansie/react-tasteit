@@ -78,26 +78,17 @@ const Form = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&athor=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
-        
-        console.log("obj2", ingredients);
+        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&author=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;       
         let str2 = "";
-        let i = 0;
+
         ingredients.forEach(ingredient => {
-            console.log("round: " , i);
             if (str2 === "") {
                 str2 = `&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
             }
             else{str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
-
             }
-            
-            console.log("str2", str2);                   
-            console.log("str1", str1);
-            i++;
         });
         str1 = `${str1}${str2}`;
-        alert(str1);
         axios
             .post("http://localhost:3030/input", str1)
             .then((res) => console.log(res))

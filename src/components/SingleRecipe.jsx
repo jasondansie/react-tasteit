@@ -14,17 +14,21 @@ const SingleRecipe = () => {
             .then(
                 (res) => {
                     setData(res.data.result);
-                    console.log("results",res.data.result);
                 });
     }, [params.id]);
+
+    const randomNumber = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
 
   const  displayIngredients = () => {
 
         let quantList = Object.assign([], data.quantity);
         let ingredList = Object.assign([], data.ingredients);
-        
+        let randNum = Math.floor(Math.random() * (1000 - 0 + 1) + 0)
         return quantList.map((quant, index) => (
-            <Ingredient 
+            <Ingredient
+                id={randomNumber(1,1000)} 
                 quantity={quant}
                 ingredient={ingredList[index]}
             />
@@ -49,7 +53,7 @@ const SingleRecipe = () => {
                 </div>
                 <div className={classes.ingredients}>
                 <h2>Ingredients</h2>
-                {displayIngredients()}
+                    {displayIngredients()}
                 
                 </div>
             </div>
