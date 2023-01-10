@@ -20,6 +20,10 @@ app.set('views', path.join(__dirname, 'pages'));
 app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+
 
 const menuPath = path.join(__dirname, 'http://localhost:3000');
 

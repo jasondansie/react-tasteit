@@ -19,11 +19,11 @@ const SingleRecipe = () => {
 
     return (
         <div className={classes.singleRecipe}>
-            <h1>{data.name}</h1>
+            <h1>{data.title}</h1>
             <div className={classes.middle}>               
                 <img src={data.image} alt={data.title} />
                 <div className={classes.descript}>
-                    <p>{data.Description}</p>
+                    <p>{data.description}</p>
                     <h4>{data.author}</h4>
                 </div>
             </div>
@@ -34,7 +34,7 @@ const SingleRecipe = () => {
                 </div>
                 <div className={classes.ingredients}>
                 <h2>Ingredients</h2>
-                    <h4>{data.ingredients}</h4>
+                <p>Quantity</p><h4>{data.quantity}</h4><p>Ingredient</p><h4>{data.ingredients}</h4>
                 </div>
             </div>
         </div>

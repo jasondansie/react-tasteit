@@ -5,8 +5,11 @@ import classes from './Form.module.css'
 const Form = () => {
     const [data, setData] = useState([]);
     const [recipe, setRecipe] = useState([]);
-    const [flag, setFlag] = useState([]);
-    const [uid, setUid] = useState([]);
+    
+    const [ingredients, setIngredients] = useState([{
+        quantity: "",
+        ingredient: ""
+    }]);
 
     const [formValues, setFormValues] = useState([{
         id: "",
@@ -15,10 +18,9 @@ const Form = () => {
         country: "",
         flag: "",
         description: "",
-        image: "",
+        image: "/images/barbecue.jpg",
         quantity: "",
-        ingredient: "",
-        instructions: ""
+        instructions: "",
     }]);
 
 
@@ -35,9 +37,10 @@ const Form = () => {
     }, []);
 
     let handleChange = (i, e) => {
-        let newFormValues = [...formValues];
+        console.log("changing: ", ingredients)
+        let newFormValues = [...ingredients];
         newFormValues[i][e.target.name] = e.target.value;
-        setFormValues(newFormValues);
+        setIngredients(newFormValues);
     }
 
     const handleMainFormChange = (e) => {
@@ -56,35 +59,49 @@ const Form = () => {
     const handleFlagChange = (countryName) => {
         let newFormValues = [...formValues];
         let flag = data.filter(country => country.name.common.includes(countryName))
-        setUid(recipe.length + 1);
+        
         newFormValues[0]["flag"] = flag[0].flags.png;
         newFormValues[0]["id"] = recipe.length + 1;
         setFormValues(newFormValues);
     }
 
     let addFormFields = () => {
-        setFormValues([...formValues, { quantity: "", ingredient: "" }])
+        console.log("adding");
+        setIngredients([...ingredients, { quantity: "", ingredient: "" }])
     }
 
     let removeFormFields = (i) => {
-        let newFormValues = [...formValues];
+        let newFormValues = [...ingredients];
         newFormValues.splice(i, 1);
-        setFormValues(newFormValues)
+        setIngredients(newFormValues)
     }
 
     let handleSubmit = (event) => {
         event.preventDefault();
         let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&athor=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
-        str1.replace("[", "");
+        
+        console.log("obj2", ingredients);
+        let str2 = "";
+        let i = 0;
+        ingredients.forEach(ingredient => {
+            console.log("round: " , i);
+            if (str2 === "") {
+                str2 = `&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
+            }
+            else{str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
+
+            }
+            
+            console.log("str2", str2);                   
+            console.log("str1", str1);
+            i++;
+        });
+        str1 = `${str1}${str2}`;
         alert(str1);
-        console.log("formvalues", str1);
-        console.log("formvalues", formValues);
         axios
             .post("http://localhost:3030/input", str1)
             .then((res) => console.log(res))
             .catch((error) => console.log(error))
-
-
     }
 
     return (
@@ -92,7 +109,7 @@ const Form = () => {
             <h1>Add a new recipe</h1>
             <form action="" method="" onSubmit={handleSubmit}>
                 <div className={classes.formInput}>
-                    <input type="text" id="id" name="id" size="40" placeholder={uid} defaultValue={uid} hidden></input>
+                    <input type="text" id="id" name="id" size="40" hidden></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="title">Title:</label>
@@ -113,7 +130,7 @@ const Form = () => {
                     </select>
                 </div>
                 <div className={classes.formInput}>
-                    <input type="text" id="flag" name="flag" size="40" placeholder={flag} defaultValue={flag} hidden onChange={e => handleMainFormChange(e)}></input>
+                    <input type="text" id="flag" name="flag" size="40"  hidden onChange={e => handleMainFormChange(e)}></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="description">Description:</label>
@@ -127,13 +144,13 @@ const Form = () => {
                     <label htmlFor="ingredients">Ingredients:</label>
                 </div>
                 <div className={classes.formInput}>
-                    {formValues.map((element, index) => (
+                    {ingredients.map((element, index) => (
 
                         <div className="form-inline" key={index}>
                             <label>quantity</label>
                             <input type="text" name="quantity" value={element.quantity || ""} onChange={e => handleChange(index, e)} />
                             <label>ingredients</label>
-                            <input type="text" name="ingredients" value={element.ingredients || ""} onChange={e => handleChange(index, e)} />
+                            <input type="text" name="ingredient" value={element.ingredient || ""} onChange={e => handleChange(index, e)} />
                             {
                                 index ?
                                     <button type="button" className="button remove" onClick={() => removeFormFields(index)}>Remove</button>
