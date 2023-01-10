@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+import Ingredient from './Ingredient';
 import classes from './SingleRecipe.module.css'
 
 const SingleRecipe = () => {
@@ -16,6 +17,20 @@ const SingleRecipe = () => {
                     console.log("results",res.data.result);
                 });
     }, [params.id]);
+
+  const  displayIngredients = () => {
+
+        let quantList = Object.assign([], data.quantity);
+        let ingredList = Object.assign([], data.ingredients);
+        
+        return quantList.map((quant, index) => (
+            <Ingredient 
+                quantity={quant}
+                ingredient={ingredList[index]}
+            />
+        ))
+        
+    }
 
     return (
         <div className={classes.singleRecipe}>
@@ -34,7 +49,8 @@ const SingleRecipe = () => {
                 </div>
                 <div className={classes.ingredients}>
                 <h2>Ingredients</h2>
-                <p>Quantity</p><h4>{data.quantity}</h4><p>Ingredient</p><h4>{data.ingredients}</h4>
+                {displayIngredients()}
+                
                 </div>
             </div>
         </div>

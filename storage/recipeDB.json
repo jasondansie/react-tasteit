@@ -156,5 +156,25 @@
             "sgdhsgfdn",
             "afdfsgd"
         ]
+    },
+    {
+        "id": 14,
+        "title": "fried chicken",
+        "athor": "Jason",
+        "country": "Réunion",
+        "flag": "https://flagcdn.com/w320/re.png",
+        "description": "Fried chicken",
+        "image": "/images/barbecue.jpg",
+        "instructions": "fry it up baby",
+        "quantity": [
+            "1",
+            "2",
+            "3"
+        ],
+        "ingredients": [
+            "checken",
+            "spices",
+            "biscuits"
+        ]
     }
 ]
