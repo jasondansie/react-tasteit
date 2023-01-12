@@ -28,7 +28,6 @@ video {
 
 @keyframes gm-slidein {
     from {
-        -webkit-transform: translate3d(0, -100%, 0);
         opacity: 0;
         transform: translate3d(0, -100%, 0);
     }
@@ -41,7 +40,6 @@ video {
 }
 
 .heropanel__content {
-    -moz-animation: gm-slidein 3s 1;
     -ms-animation: gm-slidein 3s 1;
     -o-animation: gm-slidein 3s 1;
     -webkit-animation: gm-slidein 3s 1;

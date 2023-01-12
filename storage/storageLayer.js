@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
 const path = require('path');
 
 const { storageFile, adapterfile, key } = require('./storageConfig.json');
 
 const { readStorage, writeStorage } = require('./readerWriter');
-const { dirname } = require('path');
 
 const storageFilePath = path.join(__dirname, storageFile);
 
@@ -27,12 +26,12 @@ const addToStorage = async (newEntry) => {
     return await writeStorage(storageFilePath, storageData);
 }
 
-const updateEntry = async (updateEntry) => {
+const updateEntry = async (entry) => {
     const storageData = await readStorage(storageFilePath);
-    const currentEntry = storageData.find(item => item[key] == updateEntry[key]); // this is a reference to the entry in the array. 
+    const currentEntry = storageData.find(item => item[key] == entry[key]); // this is a reference to the entry in the array. 
     
     if (currentEntry) {
-        Object.assign(currentEntry, adapt(updateEntry)); // this updates the item in the array directly.
+        Object.assign(currentEntry, adapt(entry)); // this updates the item in the array directly.
         return await writeStorage(storageFilePath, storageData);
     }
     
@@ -41,7 +40,7 @@ const updateEntry = async (updateEntry) => {
 
 const deleteEntry = async (id) => {
     const storageData = await readStorage(storageFilePath);
-    const i = storageData.findIndex(item => item[key] == id);
+    const i = storageData.findIndex(item => item[key] === id);
     
     if (i < 0) {
         return false;
@@ -50,38 +49,5 @@ const deleteEntry = async (id) => {
 
     return await writeStorage(storageFilePath, storageData);
 }
-
-
-//Tests
-
-//getAllFromStorage().then(console.log).catch(console.log);
-
-//getFromStorageWithNumber(2).then(console.log).catch(console.log);
-
-// addToStorage(
-//     {
-//         "id": 5,
-//         "name": "Pizza",
-//         "author": "",
-//         "country": "Peru",
-//         "flag": "https://flagcdn.com/w320/pe.png",
-//         "Description": "FPS",
-//         "image": "https://www.w3schools.com/howto/img_avatar.png",
-//         "ingredients": "",
-//         "instructions": ""
-//     }
-// ).then(console.log).catch(console.log);
-
-// updateEntry(
-//     {
-//         "number":"120",
-//         "name":"World of Warcraft",
-//         "quantity":21,
-//         "rating":"********",
-//         "genre":"MMORP"
-//     }
-// ).then(console.log).catch(console.log);
-
-//deleteEntry(12).then(console.log).catch(console.log);
 
 module.exports = { getAllFromStorage, getFromStorageWithNumber, addToStorage, updateEntry, deleteEntry }

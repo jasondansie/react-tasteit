@@ -16,7 +16,7 @@ module.exports = class Datastorage{
     }
 
     getOne(id){
-        return new Promise(async (resolve, reject) => {
+        const singleEntry = new Promise(async (resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND('---empty---'));
             }
@@ -30,10 +30,12 @@ module.exports = class Datastorage{
                 }
             }
         });
+
+        const results = Promise.resolve(singleEntry);
+        return results;
     }
 
     insert(entry){
-        console.log("entry:", entry);
         return new Promise(async (resolve, reject) => {
             if (entry) {
                if (!entry.id) {

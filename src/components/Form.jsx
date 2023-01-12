@@ -5,7 +5,7 @@ import classes from './Form.module.css'
 const Form = () => {
     const [data, setData] = useState([]);
     const [recipe, setRecipe] = useState([]);
-    
+
     const [ingredients, setIngredients] = useState([{
         quantity: "",
         ingredient: ""
@@ -37,7 +37,6 @@ const Form = () => {
     }, []);
 
     let handleChange = (i, e) => {
-        console.log("changing: ", ingredients)
         let newFormValues = [...ingredients];
         newFormValues[i][e.target.name] = e.target.value;
         setIngredients(newFormValues);
@@ -45,28 +44,25 @@ const Form = () => {
 
     const handleMainFormChange = (e) => {
         let newFormValues = [...formValues];
-        console.log("newFormValues", newFormValues);
-        console.log("target", e.target.name);
         newFormValues[0][e.target.name] = e.target.value;
 
         if (e.target.name === "country") {
-            console.log("calling flag change with: ", e.target.value);
             handleFlagChange(e.target.value);
         }
+
         setFormValues(newFormValues);
     }
 
     const handleFlagChange = (countryName) => {
         let newFormValues = [...formValues];
         let flag = data.filter(country => country.name.common.includes(countryName))
-        
+
         newFormValues[0]["flag"] = flag[0].flags.png;
         newFormValues[0]["id"] = recipe.length + 1;
         setFormValues(newFormValues);
     }
 
     let addFormFields = () => {
-        console.log("adding");
         setIngredients([...ingredients, { quantity: "", ingredient: "" }])
     }
 
@@ -78,14 +74,15 @@ const Form = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&author=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;       
+        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&author=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
         let str2 = "";
 
         ingredients.forEach(ingredient => {
             if (str2 === "") {
                 str2 = `&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
             }
-            else{str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
+            else {
+                str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
             }
         });
         str1 = `${str1}${str2}`;
@@ -121,7 +118,7 @@ const Form = () => {
                     </select>
                 </div>
                 <div className={classes.formInput}>
-                    <input type="text" id="flag" name="flag" size="40"  hidden onChange={e => handleMainFormChange(e)}></input>
+                    <input type="text" id="flag" name="flag" size="40" hidden onChange={e => handleMainFormChange(e)}></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="description">Description:</label>
@@ -149,14 +146,16 @@ const Form = () => {
                             }
                         </div>
                     ))}
+                    <div className="button-section">
+                        <button className="add" type="button" onClick={() => addFormFields()}>Add</button>
+                    </div>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="instructions">Instructions:</label>
                     <input type="text" id="instructions" name="instructions" size="10" onChange={e => handleMainFormChange(e)}></input>
                 </div>
                 <div className="button-section">
-                    <button className="button add" type="button" onClick={() => addFormFields()}>Add</button>
-                    <button className="button submit" type="submit">Submit</button>
+                    <button className="submit" type="submit">Submit</button>
                 </div>
             </form>
         </div>

@@ -21,21 +21,7 @@
   border: 1px solid black;
 }
 
-.button {
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 6px;
-}
-
-.mainImage{
+.mainImage {
   min-height: 36.5vh;
   width: 100%;
 }
@@ -45,5 +31,5 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

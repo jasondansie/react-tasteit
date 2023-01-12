@@ -17,7 +17,7 @@
 }
 
 .formContent label {
-    margin-bottom: 10px;
+    margin: 0 10px 10px;
 }
 
 .formContent input {
@@ -28,20 +28,6 @@
 .formContent button {
     margin: 20px 0 50px;
 
-}
-
-.button {
-    background-color: white;
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 6px;
 }
 
 .ingredients {
