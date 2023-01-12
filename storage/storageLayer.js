@@ -1,4 +1,3 @@
-'use strict';
 
 const path = require('path');
 
@@ -15,7 +14,7 @@ const getAllFromStorage = async () => {
 }
 
 const getFromStorageWithNumber = async (number) =>{
-    return (await readStorage(storageFilePath)).find(item =>item[key] == number) || null;
+    return (await readStorage(storageFilePath)).find(item =>item[key] === number) || null;
 }
 
 const addToStorage = async (newEntry) => {
@@ -28,7 +27,7 @@ const addToStorage = async (newEntry) => {
 
 const updateEntry = async (entry) => {
     const storageData = await readStorage(storageFilePath);
-    const currentEntry = storageData.find(item => item[key] == entry[key]); // this is a reference to the entry in the array. 
+    const currentEntry = storageData.find(item => item[key] === entry[key]); // this is a reference to the entry in the array. 
     
     if (currentEntry) {
         Object.assign(currentEntry, adapt(entry)); // this updates the item in the array directly.

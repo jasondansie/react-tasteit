@@ -35,3 +35,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.form_inline {
+    margin-bottom: 2vh;
+}
+
+.form_inline button {
+    margin: 0 0 0 2vw;
+}

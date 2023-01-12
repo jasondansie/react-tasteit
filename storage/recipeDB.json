@@ -44,5 +44,23 @@
             "chocolat chips",
             "flour"
         ]
+    },
+    {
+        "id": 3,
+        "title": "Something",
+        "author": "me",
+        "country": "Cook Islands",
+        "flag": "https://flagcdn.com/w320/ck.png",
+        "description": "well its something",
+        "image": "/images/barbecue.jpg",
+        "instructions": "adsgdhtf",
+        "quantity": [
+            "1",
+            "2"
+        ],
+        "ingredients": [
+            "stuff",
+            "stuff"
+        ]
     }
 ]

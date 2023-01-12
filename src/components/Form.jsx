@@ -134,14 +134,14 @@ const Form = () => {
                 <div className={classes.formInput}>
                     {ingredients.map((element, index) => (
 
-                        <div className="form-inline" key={index}>
+                        <div className={classes.form_inline} key={index}>
                             <label>quantity</label>
                             <input type="text" name="quantity" value={element.quantity || ""} onChange={e => handleChange(index, e)} />
                             <label>ingredients</label>
                             <input type="text" name="ingredient" value={element.ingredient || ""} onChange={e => handleChange(index, e)} />
                             {
                                 index ?
-                                    <button type="button" className="button remove" onClick={() => removeFormFields(index)}>Remove</button>
+                                    <button type="button" className={classes.button_remove} onClick={() => removeFormFields(index)}>Remove</button>
                                     : null
                             }
                         </div>
