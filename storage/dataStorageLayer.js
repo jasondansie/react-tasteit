@@ -1,5 +1,3 @@
-'use strict';
-
 const {CODES, MESSAGES} = require('./statusCodes');
 
 const { getAllFromStorage, getFromStorageWithNumber, addToStorage, updateEntry, deleteEntry } = require('./storageLayer');
@@ -16,12 +14,12 @@ module.exports = class Datastorage{
     }
 
     getOne(id){
-        const singleEntry = new Promise(async (resolve, reject) => {
+        const singleEntry = new Promise((resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND('---empty---'));
             }
             else{
-                const result = await getFromStorageWithNumber(id);
+                const result = getFromStorageWithNumber(id);
                 if (result) {
                     resolve(result);
                 }
@@ -36,15 +34,15 @@ module.exports = class Datastorage{
     }
 
     insert(entry){
-        return new Promise(async (resolve, reject) => {
+        return new Promise( (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
                     reject(MESSAGES.NOT_INSERTED());
                } 
-               else if(await getFromStorageWithNumber(entry.id)){
+               else if(getFromStorageWithNumber(entry.id)){
                 reject(MESSAGES.ALREADY_IN_USE(entry.id));
                }
-               else if(await addToStorage(entry)){
+               else if(addToStorage(entry)){
                   resolve(MESSAGES.INSERT_OK(entry.id));
                }
                else{
@@ -58,9 +56,9 @@ module.exports = class Datastorage{
     }
 
     update(entry){
-        return new Promise(async (resolve, reject) => {
+        return new Promise((resolve, reject) => {
             if (entry) {
-                if (await updateEntry(entry)) {
+                if (updateEntry(entry)) {
                     resolve(MESSAGES.UPDATE_OK(entry.id));
                 }
                 else{
@@ -74,11 +72,11 @@ module.exports = class Datastorage{
     }
 
     remove(id){
-        return new Promise(async (resolve, reject) => {
+        return new Promise((resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND(id));
             }
-            else if(await deleteEntry(id)){
+            else if(deleteEntry(id)){
                 resolve(MESSAGES.REMOVE_OK(id));
             }
             else{
