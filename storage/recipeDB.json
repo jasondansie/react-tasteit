@@ -1,86 +1,182 @@
 [
     {
         "id": 1,
-        "title": "Hamburgers",
+        "title": "Pancakes",
         "author": "Jason",
-        "country": "United States",
-        "flag": "https://flagcdn.com/w320/us.png",
-        "description": "Juicy burger on a bun",
-        "image": "/images/barbecue.jpg",
-        "instructions": "slice tomatoe and tomatoes, chop lettuce add everything to a bun and enjoy",
-        "quantity": [
-            "6",
-            "6",
-            "1 head",
-            "1",
-            "1"
-        ],
-        "ingredients": [
-            "beef patties",
-            "hamberger buns",
-            "lettuce",
-            "tomatoe",
-            "onion"
-        ]
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "FPS",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": " flour, milk, eggs",
+        "instructions": "mix it, mix it real good"
     },
     {
         "id": 2,
-        "title": "Chocolate chip cookies",
+        "title": "Spaghti",
         "author": "Jason",
-        "country": "Finland",
-        "flag": "https://flagcdn.com/w320/fi.png",
-        "description": "Warm chocolate chip cookies straight from the oven",
-        "image": "/images/barbecue.jpg",
-        "instructions": "mix bake and repeat. works well with coffee.",
-        "quantity": [
-            "2",
-            "1 cup",
-            "1 bag",
-            "1/2 kg"
-        ],
-        "ingredients": [
-            "eggs",
-            "sugar",
-            "chocolat chips",
-            "flour"
-        ]
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "it's a da spagat",
+        "image": "/images/TasteIt.png",
+        "ingredients": "sauce, noodles, meat",
+        "instructions": "cook it"
     },
     {
         "id": 3,
-        "title": "Something",
-        "author": "me",
-        "country": "Cook Islands",
-        "flag": "https://flagcdn.com/w320/ck.png",
-        "description": "well its something",
+        "title": "Lasagna",
+        "author": "Jason",
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "Yummie lasagna",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": "noodles, sauce, meat, cheese",
+        "instructions": "bake it really good"
+    },
+    {
+        "id": 4,
+        "title": "Pancakes",
+        "author": "Jason",
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "FPS",
+        "image": "/images/TasteIt.png",
+        "ingredients": "",
+        "instructions": ""
+    },
+    {
+        "id": 5,
+        "title": "Pizza",
+        "author": "Jason",
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "FPS",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": "",
+        "instructions": ""
+    },
+    {
+        "id": 6,
+        "title": "Pizza",
+        "author": "Jason",
+        "country": "Peru",
+        "flag": "https://flagcdn.com/w320/pe.png",
+        "Description": "FPS",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": "",
+        "instructions": ""
+    },
+    {
+        "id": 7,
+        "title": "goulash",
+        "author": "Jason",
+        "country": "Finland",
+        "flag": "https://flagcdn.com/w320/fi.png",
+        "description": "yummy stuff",
+        "image": "https://www.w3schools.com/howto/img_avatar.png",
+        "ingredients": "noodles",
+        "instructions": "boil"
+    },
+    {
+        "id": 8,
+        "title": "Tacos",
+        "author": "Jaosn",
+        "country": "Ireland",
+        "flag": "https://flagcdn.com/w320/ie.png",
+        "description": "it's food",
         "image": "/images/barbecue.jpg",
-        "instructions": "adsgdhtf",
+        "ingredients": "good yummies",
+        "instructions": "hot sauce"
+    },
+    {
+        "id": 9,
+        "title": "Hamburgers",
+        "athor": "Hamburgers",
+        "country": "Mayotte",
+        "flag": "https://flagcdn.com/w320/yt.png",
+        "description": "burgers and fries",
+        "image": "",
+        "instructions": "grill it baby"
+    },
+    {
+        "id": 10,
+        "title": "biscuits and gravy",
+        "athor": "Jason",
+        "country": "Anguilla",
+        "flag": "https://flagcdn.com/w320/ai.png",
+        "description": "there are some biscuits, sausage and gravy",
+        "image": "",
+        "instructions": "put it all together"
+    },
+    {
+        "id": 11,
+        "title": "soop",
+        "author": "jaosn",
+        "country": "Western Sahara",
+        "flag": "https://flagcdn.com/w320/eh.png",
+        "description": "it's good",
+        "image": "/images/barbecue.jpg",
+        "instructions": "adsfagadfgt",
         "quantity": [
             "1",
-            "2"
+            "3"
         ],
         "ingredients": [
-            "stuff",
+            "water",
             "stuff"
         ]
     },
     {
-        "id": 4,
-        "title": "asfgsd",
-        "author": "adfgsd",
-        "country": "Iceland",
-        "flag": "https://flagcdn.com/w320/is.png",
-        "description": "sgwserads",
+        "id": 12,
+        "title": "soop 2",
+        "author": "jason",
+        "country": "Cocos (Keeling) Islands",
+        "flag": "https://flagcdn.com/w320/cc.png",
+        "description": "it's even better then good soop",
         "image": "/images/barbecue.jpg",
-        "instructions": "agfshdeyjuyghmhdgfgaerf2q435srdgf",
+        "instructions": "sfdgsdfgads",
         "quantity": [
-            "das",
-            "adf",
-            "dgfhf"
+            "1",
+            "3"
         ],
         "ingredients": [
-            "sd",
-            "adf",
-            "trsdf"
+            "water",
+            "stuff"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "soop 3",
+        "author": "jason",
+        "country": "Western Sahara",
+        "flag": "https://flagcdn.com/w320/eh.png",
+        "description": "it's soop",
+        "image": "/images/barbecue.jpg",
+        "instructions": "sdgagafgf",
+        "quantity": [
+            "1",
+            "3"
+        ],
+        "ingredients": [
+            "asdfs",
+            "stuff"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "soop 4",
+        "author": "jason",
+        "country": "Western Sahara",
+        "flag": "https://flagcdn.com/w320/eh.png",
+        "description": "sgnukr6uegf",
+        "image": "/images/barbecue.jpg",
+        "instructions": "dhjuetrthjrtrt",
+        "quantity": [
+            "2",
+            "4"
+        ],
+        "ingredients": [
+            "dghrgsdf",
+            "dnheub"
         ]
     }
 ]

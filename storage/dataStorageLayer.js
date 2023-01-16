@@ -14,12 +14,12 @@ module.exports = class Datastorage{
     }
 
     getOne(id){
-        const singleEntry = new Promise((resolve, reject) => {
+        return new Promise( (resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND('---empty---'));
             }
             else{
-                const result = getFromStorageWithNumber(id);
+                const result =  getFromStorageWithNumber(id);
                 if (result) {
                     resolve(result);
                 }
@@ -28,21 +28,19 @@ module.exports = class Datastorage{
                 }
             }
         });
-
-        const results = Promise.resolve(singleEntry);
-        return results;
     }
 
     insert(entry){
-        return new Promise( (resolve, reject) => {
+        console.log("entry:", entry);
+        return new Promise(async (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
                     reject(MESSAGES.NOT_INSERTED());
                } 
-               else if(getFromStorageWithNumber(entry.id)){
+               else if(await getFromStorageWithNumber(entry.id)){
                 reject(MESSAGES.ALREADY_IN_USE(entry.id));
                }
-               else if(addToStorage(entry)){
+               else if(await addToStorage(entry)){
                   resolve(MESSAGES.INSERT_OK(entry.id));
                }
                else{
@@ -53,36 +51,6 @@ module.exports = class Datastorage{
                 reject(MESSAGES.NOT_INSERTED());
             }
         });
-    }
-
-    update(entry){
-        return new Promise((resolve, reject) => {
-            if (entry) {
-                if (updateEntry(entry)) {
-                    resolve(MESSAGES.UPDATE_OK(entry.id));
-                }
-                else{
-                    reject(MESSAGES.NOT_UPDATED());
-                }
-            }
-            else{
-                reject(MESSAGES.NOT_UPDATED());
-            }
-        })
-    }
-
-    remove(id){
-        return new Promise((resolve, reject) => {
-            if (!id) {
-                reject(MESSAGES.NOT_FOUND(id));
-            }
-            else if(deleteEntry(id)){
-                resolve(MESSAGES.REMOVE_OK(id));
-            }
-            else{
-               reject(MESSAGES.NOT_REMOVED(id)); 
-            }
-        })
     }
 
     getSize(){
