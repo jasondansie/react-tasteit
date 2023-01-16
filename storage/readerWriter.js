@@ -1,5 +1,3 @@
-'use strict'
-
 const fs = require('fs').promises;
 
 const readStorage = async (storageFile) => {
