@@ -26,7 +26,7 @@ const addToStorage = async (newEntry) => {
 
 const updateEntry = async (updateEntry) => {
     const storageData = await readStorage(storageFilePath);
-    const currentEntry = storageData.find(item => item[key] == updateEntry[key]); // this is a reference to the entry in the array. 
+    const currentEntry = storageData.find(item => item[key] === updateEntry[key]); // this is a reference to the entry in the array. 
     
     if (currentEntry) {
         Object.assign(currentEntry, adapt(updateEntry)); // this updates the item in the array directly.
@@ -38,7 +38,7 @@ const updateEntry = async (updateEntry) => {
 
 const deleteEntry = async (id) => {
     const storageData = await readStorage(storageFilePath);
-    const i = storageData.findIndex(item => item[key] == id);
+    const i = storageData.findIndex(item => item[key] === id);
     
     if (i < 0) {
         return false;

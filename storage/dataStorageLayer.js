@@ -31,16 +31,15 @@ module.exports = class Datastorage{
     }
 
     insert(entry){
-        console.log("entry:", entry);
-        return new this.Promise(async (resolve, reject) => {
+        return new this.Promise( (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
                     reject(MESSAGES.NOT_INSERTED());
                } 
-               else if(await getFromStorageWithNumber(entry.id)){
+               else if( getFromStorageWithNumber(entry.id)){
                 reject(MESSAGES.ALREADY_IN_USE(entry.id));
                }
-               else if(await addToStorage(entry)){
+               else if( addToStorage(entry)){
                   resolve(MESSAGES.INSERT_OK(entry.id));
                }
                else{
