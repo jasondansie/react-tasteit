@@ -3,7 +3,7 @@
 
 const adapt = (item) => {
     return Object.assign(item, {
-        id: +item.id,
+        id: Number(item.id),
     });
 }
 

@@ -33,16 +33,13 @@ video {
     }
 
     to {
-        -webkit-transform: none;
+        transform: none;
         opacity: 1;
         transform: none;
     }
 }
 
 .heropanel__content {
-    -ms-animation: gm-slidein 3s 1;
-    -o-animation: gm-slidein 3s 1;
-    -webkit-animation: gm-slidein 3s 1;
     animation: gm-slidein 3s 1;
     border-bottom: 1px solid #FFF;
     margin: 0 auto;

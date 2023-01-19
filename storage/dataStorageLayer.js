@@ -14,7 +14,7 @@ module.exports = class Datastorage{
     }
 
     getOne(id){
-        return new Promise( (resolve, reject) => {
+        return new this.Promise( (resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND('---empty---'));
             }
@@ -32,7 +32,7 @@ module.exports = class Datastorage{
 
     insert(entry){
         console.log("entry:", entry);
-        return new Promise(async (resolve, reject) => {
+        return new this.Promise(async (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
                     reject(MESSAGES.NOT_INSERTED());

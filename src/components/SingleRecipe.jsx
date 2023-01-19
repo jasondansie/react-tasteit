@@ -48,7 +48,7 @@ const SingleRecipe = () => {
             </div>
             <div className={classes.prep}>
                 <div className={classes.preperations}>
-                    <h2>Preperation</h2>
+                    <h2>Preparation</h2>
                     <p>{data.instructions}</p>
                 </div>
                 <div className={classes.ingredients}>

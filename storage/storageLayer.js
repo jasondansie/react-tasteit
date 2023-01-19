@@ -8,12 +8,12 @@ const storageFilePath = path.join(__dirname, storageFile);
 
 const  { adapt } = require(path.join(__dirname, adapterfile));
 
-const getAllFromStorage = async () => {
+const getAllFromStorage = () => {
     return readStorage(storageFilePath);
 }
 
 const getFromStorageWithNumber = async (number) =>{
-    return (await readStorage(storageFilePath)).find(item =>item[key] == number) || null;
+    return (await readStorage(storageFilePath)).find(item =>item[key] === number) || null;
 }
 
 const addToStorage = async (newEntry) => {
@@ -21,7 +21,7 @@ const addToStorage = async (newEntry) => {
     
     storageData.push(adapt(newEntry));
     
-    return await writeStorage(storageFilePath, storageData);
+    return writeStorage(storageFilePath, storageData);
 }
 
 const updateEntry = async (updateEntry) => {
@@ -45,40 +45,8 @@ const deleteEntry = async (id) => {
     }
     storageData.splice(i,1);
 
-    return await writeStorage(storageFilePath, storageData);
+    return writeStorage(storageFilePath, storageData);
 }
 
-
-//Tests
-
-//getAllFromStorage().then(console.log).catch(console.log);
-
-//getFromStorageWithNumber(2).then(console.log).catch(console.log);
-
-// addToStorage(
-//     {
-//         "id": 5,
-//         "name": "Pizza",
-//         "author": "",
-//         "country": "Peru",
-//         "flag": "https://flagcdn.com/w320/pe.png",
-//         "Description": "FPS",
-//         "image": "https://www.w3schools.com/howto/img_avatar.png",
-//         "ingredients": "",
-//         "instructions": ""
-//     }
-// ).then(console.log).catch(console.log);
-
-// updateEntry(
-//     {
-//         "number":"120",
-//         "name":"World of Warcraft",
-//         "quantity":21,
-//         "rating":"********",
-//         "genre":"MMORP"
-//     }
-// ).then(console.log).catch(console.log);
-
-//deleteEntry(12).then(console.log).catch(console.log);
 
 module.exports = { getAllFromStorage, getFromStorageWithNumber, addToStorage, updateEntry, deleteEntry }
