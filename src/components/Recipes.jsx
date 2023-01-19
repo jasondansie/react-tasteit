@@ -11,52 +11,52 @@ const Recipes = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:3030/all')
+        axios.get('http://localhost:3040/recipes')
             .then(
                 (res) => {
-                    setData(res.data.result);
-                    setRecipeList(res.data.result);
-                });            
-    }, []);     
+                    setData(res.data);
+                    setRecipeList(res.data);
+                });
+    }, []);
 
     const searchHandler = (e) => {
         setSearch({
             string: e.target.value,
         });
 
-        let foundRecipe = data.filter(recipe => 
-            recipe.name.toLowerCase().includes(search.string.toLowerCase()));         
-             
-        setRecipeList(foundRecipe); 
-        
+        let foundRecipe = data.filter(recipe =>
+            recipe.name.toLowerCase().includes(search.string.toLowerCase()));
+
+        setRecipeList(foundRecipe);
+
         if (search.string.length === 1) {
             setRecipeList(data);
-        }    
+        }
     }
 
-    const dispalyRecipe = () =>{
+    const dispalyRecipe = () => {
         return recipeList.map((card) => (
             <Card
-            key={card.id}
-            flag={card.flag}
-            image={card.image}
-            title={card.title}
-            link={`/SingleRecipe/${card.id}`}
+                key={card.id}
+                flag={card.flag}
+                image={card.image}
+                title={card.title}
+                link={`/SingleRecipe/${card.id}`}
             />
         ))
     }
 
     return (
         <div className={classes.recipes} >
-                <h1>Our Recipes</h1>
-                <div className={classes.search}>
-                    <label htmlFor="search">Search: </label>
-                    <input onChange={(e) => searchHandler(e)} name="search"></input>
-                </div>              
-                <div className={classes.cards}>
-                    {dispalyRecipe()}
-                </div>
+            <h1>Our Recipes</h1>
+            <div className={classes.search}>
+                <label htmlFor="search">Search: </label>
+                <input onChange={(e) => searchHandler(e)} name="search"></input>
             </div>
+            <div className={classes.cards}>
+                {dispalyRecipe()}
+            </div>
+        </div>
     );
 };
 

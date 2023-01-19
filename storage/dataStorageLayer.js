@@ -10,11 +10,11 @@ module.exports = class Datastorage{
     }
 
     getAll(){
-       return this.getAllFromStorage();
+       return getAllFromStorage();
     }
 
     getOne(id){
-        return new this.Promise( (resolve, reject) => {
+        return new Promise( (resolve, reject) => {
             if (!id) {
                 reject(MESSAGES.NOT_FOUND('---empty---'));
             }
@@ -31,7 +31,7 @@ module.exports = class Datastorage{
     }
 
     insert(entry){
-        return new this.Promise( (resolve, reject) => {
+        return new Promise( (resolve, reject) => {
             if (entry) {
                if (!entry.id) {
                     reject(MESSAGES.NOT_INSERTED());
@@ -53,7 +53,7 @@ module.exports = class Datastorage{
     }
 
     getSize(){
-        let data = this.getAllFromStorage();
+        let data = getAllFromStorage();
         return data.getSize();
      }
 }

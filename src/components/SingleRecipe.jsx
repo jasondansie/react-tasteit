@@ -9,11 +9,11 @@ const SingleRecipe = () => {
     const params = useParams();
 
     useEffect(() => {
-
-        axios.get(`http://localhost:3030/getSingleRecipe/${params.id}`)
+        axios.get(`http://localhost:3040/getSingleRecipe/${params.id}`)
             .then(
                 (res) => {
-                    setData(res.data.result);
+                    console.log(res.data);
+                    setData(res.data);
                 });
     }, [params.id]);
 
