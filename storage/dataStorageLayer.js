@@ -1,11 +1,11 @@
 const {CODES, MESSAGES} = require('./statusCodes');
 
-const { getAllFromStorage, getFromStorageWithNumber, addToStorage, updateEntry, deleteEntry } = require('./storageLayer');
+const { getAllFromStorage, getFromStorageWithNumber, addToStorage } = require('./storageLayer');
 
 //Datastorage class
 
 module.exports = class Datastorage{
-    get CODES(){
+    static get CODES(){
         return CODES;
     }
 
@@ -54,7 +54,7 @@ module.exports = class Datastorage{
     }
 
     getSize(){
-        let data = getAllFromStorage();
+        let data = this.getAllFromStorage();
         return data.getSize();
      }
 }
