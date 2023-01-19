@@ -24,13 +24,13 @@ const addToStorage = async (newEntry) => {
     return writeStorage(storageFilePath, storageData);
 }
 
-const updateEntry = async (updateEntry) => {
+const updateEntry = async (updateEnt) => {
     const storageData = await readStorage(storageFilePath);
-    const currentEntry = storageData.find(item => item[key] === updateEntry[key]); // this is a reference to the entry in the array. 
+    const currentEntry = storageData.find(item => item[key] === updateEnt[key]); // this is a reference to the entry in the array. 
     
     if (currentEntry) {
-        Object.assign(currentEntry, adapt(updateEntry)); // this updates the item in the array directly.
-        return await writeStorage(storageFilePath, storageData);
+        Object.assign(currentEntry, adapt(updateEnt)); // this updates the item in the array directly.
+        return writeStorage(storageFilePath, storageData);
     }
     
     return false; // we don't update if it's not found

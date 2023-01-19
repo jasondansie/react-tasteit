@@ -10,7 +10,7 @@ module.exports = class Datastorage{
     }
 
     getAll(){
-       return getAllFromStorage();
+       return this.getAllFromStorage();
     }
 
     getOne(id){
