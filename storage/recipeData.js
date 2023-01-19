@@ -18,9 +18,8 @@ const server = http.createServer((req, res) => {
         if (route === '/recipes') {
             result = getAllRecipes();
         }
-        else if(route === pathname){
+        else if(route === pathname && pathname.includes("getSingleRecipe")){
             let value = pathname.substring(17);
-            console.log("params: ",pathname.substring(17));
             result = getRecipe('id', Number(value));
         }
         else{

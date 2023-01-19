@@ -12,8 +12,7 @@ const SingleRecipe = () => {
         axios.get(`http://localhost:3040/getSingleRecipe/${params.id}`)
             .then(
                 (res) => {
-                    console.log(res.data);
-                    setData(res.data);
+                    setData(res.data[0]);
                 });
     }, [params.id]);
 
@@ -28,12 +27,11 @@ const SingleRecipe = () => {
 
         return quantList.map((quant, index) => (
             <Ingredient
-                id={randomNumber(1, 1000)}
+                key={randomNumber(1, 1000)}
                 quantity={quant}
                 ingredient={ingredList[index]}
             />
         ))
-
     }
 
     return (
@@ -54,7 +52,6 @@ const SingleRecipe = () => {
                 <div className={classes.ingredients}>
                     <h2>Ingredients</h2>
                     {displayIngredients()}
-
                 </div>
             </div>
         </div>
