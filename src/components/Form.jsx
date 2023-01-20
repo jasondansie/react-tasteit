@@ -90,7 +90,6 @@ const Form = () => {
             .post("http://localhost:3040/input", str1)
             .then((res) => console.log(res))
             .catch((error) => console.log(error))
-
     }
 
     return (

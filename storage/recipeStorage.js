@@ -35,13 +35,10 @@ const writeStorage = async (data) => {
 
 const addToStorage = async (data) => {
 
-   // console.log("data:", data);
-
     let storageData =[];
     storageData = recipes;
     
     storageData.push(adapt(data));
-    console.log("storageData", storageData);
 
     return await writeStorage(storageData);
 }
