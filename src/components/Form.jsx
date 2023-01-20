@@ -29,10 +29,10 @@ const Form = () => {
             .then(
                 (res) => setData(res.data));
 
-        axios.get('http://localhost:3030/all')
+        axios.get('http://localhost:3040/recipes')
             .then(
                 (res) => {
-                    setRecipe(res.data.result);
+                    setRecipe(res.data);
                 });
     }, []);
 
@@ -87,9 +87,10 @@ const Form = () => {
         });
         str1 = `${str1}${str2}`;
         axios
-            .post("http://localhost:3030/input", str1)
+            .post("http://localhost:3040/input", str1)
             .then((res) => console.log(res))
             .catch((error) => console.log(error))
+
     }
 
     return (

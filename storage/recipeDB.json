@@ -1,11 +1,56 @@
-{
-    "id": 5,
-    "name": "Pizza",
-    "author": "",
-    "country": "Peru",
-    "flag": "https://flagcdn.com/w320/pe.png",
-    "Description": "FPS",
-    "image": "https://www.w3schools.com/howto/img_avatar.png",
-    "ingredients": "",
-    "instructions": ""
-}
+[
+    {
+        "id": 1,
+        "title": "bread",
+        "author": "Jason",
+        "country": "Libya",
+        "flag": "https://flagcdn.com/w320/ly.png",
+        "description": "aödajkfadkööadsjk",
+        "image": "/images/barbecue.jpg",
+        "instructions": "",
+        "quantity": [
+            "1",
+            "3"
+        ],
+        "ingredients": [
+            "water",
+            "eggs"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "bread",
+        "author": "Jason",
+        "country": "Libya",
+        "flag": "https://flagcdn.com/w320/ly.png",
+        "description": "aödajkfadkööadsjk",
+        "image": "/images/barbecue.jpg",
+        "instructions": "adfadfadf",
+        "quantity": [
+            "1",
+            "3"
+        ],
+        "ingredients": [
+            "water",
+            "eggs"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "toast",
+        "author": "jason",
+        "country": "Palau",
+        "flag": "https://flagcdn.com/w320/pw.png",
+        "description": "toats",
+        "image": "/images/barbecue.jpg",
+        "instructions": "toast it",
+        "quantity": [
+            "1",
+            "1"
+        ],
+        "ingredients": [
+            "bread",
+            "butter"
+        ]
+    }
+]

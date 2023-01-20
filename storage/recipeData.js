@@ -3,9 +3,10 @@ const http = require('http');
 const port = process.env.PORT || 3040;
 const host = process.env.HOST || "localhost";
 
-const { getAllRecipes, getRecipe } = require('./recipeStorage');
+const { getAllRecipes, getRecipe, addToStorage } = require('./recipeStorage');
 
 const server = http.createServer((req, res) => {
+    console.log("req", req);
     const {
         pathname,
         searchParams
@@ -21,6 +22,12 @@ const server = http.createServer((req, res) => {
         else if(route === pathname && pathname.includes("getSingleRecipe")){
             let value = pathname.substring(17);
             result = getRecipe('id', Number(value));
+        }
+        else if(route === pathname && pathname.includes("input")){
+            let value = pathname;
+            console.log("value", req.body);
+
+            
         }
         else{
             console.log( "string: ", searchParams.get('value'));
