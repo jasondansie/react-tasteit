@@ -23,9 +23,8 @@ const Recipes = () => {
         setSearch({
             string: e.target.value,
         });
-
         let foundRecipe = data.filter(recipe =>
-            recipe.name.toLowerCase().includes(search.string.toLowerCase()));
+            recipe.title.includes(search.string));
 
         setRecipeList(foundRecipe);
 

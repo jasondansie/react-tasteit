@@ -20,7 +20,6 @@ function getRecipe(key, value){
 }
 
 const writeStorage = async (data) => {
-    console.log("writing:", data);
     try {
         await fs.writeFile('./storage/recipeDB.json', JSON.stringify(data, null, 4), {
             encoding:'utf8',
@@ -33,14 +32,14 @@ const writeStorage = async (data) => {
     }
 }
 
-const addToStorage = async (data) => {
+const addToStorage = (data) => {
 
     let storageData =[];
     storageData = recipes;
     
     storageData.push(adapt(data));
 
-    return await writeStorage(storageData);
+    return writeStorage(storageData);
 }
 
 module.exports = { getAllRecipes, getRecipe, addToStorage }
