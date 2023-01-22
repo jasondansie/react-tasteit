@@ -1,6 +1,10 @@
-.ingredients{
+.ingredients {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    margin: 10px 0 0;
+}
+
+.ingredients h3:nth-child(1) {
+    width: 20vw;
 }

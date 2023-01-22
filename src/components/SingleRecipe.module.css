@@ -13,9 +13,16 @@
     flex-direction: row;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 25px 0;
+}
+
 .singleRecipe img {
     width: 50%;
-    margin-right: 5vw;
+
 }
 
 .singleRecipe .prep {
@@ -24,11 +31,10 @@
     margin-top: 5vh;
 }
 
-.ingredients{
-    width: 50vw;
-    margin-right: 5vw;
+.description h2 {
+    margin-top: 10px;
 }
 
-.preperations{
+.preperations {
     width: 50vw;
 }

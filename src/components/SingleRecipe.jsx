@@ -39,19 +39,22 @@ const SingleRecipe = () => {
             <h1>{data.title}</h1>
             <div className={classes.middle}>
                 <img src={data.image} alt={data.title} />
-                <div className={classes.descript}>
-                    <p>{data.description}</p>
-                    <h4>{data.author}</h4>
-                </div>
-            </div>
-            <div className={classes.prep}>
-                <div className={classes.preperations}>
-                    <h2>Preparation</h2>
-                    <p>{data.instructions}</p>
-                </div>
-                <div className={classes.ingredients}>
-                    <h2>Ingredients</h2>
-                    {displayIngredients()}
+                <div className={classes.info}>
+                    <div className={classes.description}>
+                        <h4>By: {data.author}</h4>
+                        <h2>Description</h2>
+                        <p>{data.description}</p>
+                    </div>
+                    <div className={classes.ingredients}>
+                        <h2>Ingredients</h2>
+                        {displayIngredients()}
+                    </div>
+                    <div className={classes.prep}>
+                        <div className={classes.preperations}>
+                            <h2>Preparation</h2>
+                            <p>{data.instructions}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
