@@ -74,25 +74,55 @@ const Form = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
-        let str1 = `id=${formValues[0].id}&title=${formValues[0].title}&author=${formValues[0].author}&country=${formValues[0].country}&flag=${formValues[0].flag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
-        let str2 = "";
 
-        ingredients.forEach(ingredient => {
-            if (str2 === "") {
-                str2 = `&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
-            }
-            else {
-                str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
-            }
-        });
-        str1 = `${str1}${str2}`;
-        axios
-            .post("http://localhost:3040/input", str1)
-            .then((res) => alert("Recipe added"))
-            .catch((error) => console.log(error));
+        let tempCountry;
+        let tempFlag;
+        let tempId;
 
-        event.target.reset();
-        setIngredients([{ quantity: "", ingredient: "" }])
+        if (formValues[0].country === "") {
+            tempCountry = "Finland";
+        }
+        else {
+            tempCountry = formValues[0].country;
+        }
+
+        if (formValues[0].flag === "") {
+            tempFlag = "https://flagcdn.com/w320/fi.png";
+            tempId = recipe.length + 1;
+        }
+        else {
+            tempFlag = formValues[0].flag;
+            tempId = formValues[0].id;
+        }
+
+        if (formValues[0].title === "" || formValues[0].author === "" || tempCountry === "" || tempFlag === "" || formValues[0].description === "" || formValues[0].instructions === "") {
+            alert("Form fields are empty");
+        }
+        else {
+
+
+            let str1 = `id=${tempId}&title=${formValues[0].title}&author=${formValues[0].author}&country=${tempCountry}&flag=${tempFlag}&description=${formValues[0].description}&image=${formValues[0].image}&instructions=${formValues[0].instructions}`;
+            let str2 = "";
+
+            ingredients.forEach(ingredient => {
+                if (str2 === "") {
+                    str2 = `&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
+                }
+                else {
+                    str2 = `${str2}&quantity=${ingredient.quantity}&ingredients=${ingredient.ingredient}`;
+                }
+            });
+            str1 = `${str1}${str2}`;
+            axios
+                .post("http://localhost:3040/input", str1)
+                .then((res) => alert("Recipe added"))
+                .catch((error) => console.log(error));
+
+            event.target.reset();
+            setIngredients([{ quantity: "", ingredient: "" }])
+
+        }
+
     }
 
     return (
@@ -112,7 +142,7 @@ const Form = () => {
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="country">Country:</label>
-                    <select id="country" name="country" onChange={e => handleMainFormChange(e)}>
+                    <select id="country" name="country" placeholder='Finland' onChange={e => handleMainFormChange(e)}>
 
                         {data.map((country) => (
                             <option key={country.name.common} name="country">{country.name.common} </option>
@@ -121,7 +151,7 @@ const Form = () => {
                     </select>
                 </div>
                 <div className={classes.formInput}>
-                    <input type="text" id="flag" name="flag" size="40" hidden onChange={e => handleMainFormChange(e)}></input>
+                    <input type="text" id="flag" name="flag" size="40" placeholder='https://flagcdn.com/w320/fi.png' hidden onChange={e => handleMainFormChange(e)}></input>
                 </div>
                 <div className={classes.formInput}>
                     <label htmlFor="description">Description:</label>
