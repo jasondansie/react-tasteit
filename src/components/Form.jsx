@@ -88,8 +88,11 @@ const Form = () => {
         str1 = `${str1}${str2}`;
         axios
             .post("http://localhost:3040/input", str1)
-            .then((res) => console.log(res))
-            .catch((error) => console.log(error))
+            .then((res) => alert("Recipe added"))
+            .catch((error) => console.log(error));
+
+        event.target.reset();
+        setIngredients([{ quantity: "", ingredient: "" }])
     }
 
     return (
