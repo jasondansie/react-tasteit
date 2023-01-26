@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import classes from './Button.module.css'
 
 const Button = ({ title, description, navLink, target, linkText }) => {
