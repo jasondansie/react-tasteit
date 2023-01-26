@@ -24,19 +24,20 @@ const Home = () => {
                         title="Browse Recipes"
                         description="Find all your favorites in the collection. You can search recipes based on name or country."
                         linkText="All recipes"
-                        link="/recipes"
+                        navLink="/recipes"
                     />
                     <Button
                         title="Add recipes"
                         description="Recipes from your country missing? No worries, add on!"
                         linkText="Add a recipe"
-                        link="/Form"
+                        navLink="/Form"
                     />
                     <Button
                         title="Want to know more about our projects?"
                         description="Visit our programme homepage."
                         linkText="Business College Helsinki hompage"
-                        link="http://bc.fi/"
+                        navLink="http://en.bc.fi"
+                        target="_blank"
                     />
                 </div>
             </div>

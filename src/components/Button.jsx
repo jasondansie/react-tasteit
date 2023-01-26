@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes  from './Button.module.css'
+import classes from './Button.module.css'
 
-const Button = (props) => {
+const Button = ({ title, description, navLink, target, linkText }) => {
     return (
         <div className={classes.button}>
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
-            <p><NavLink to={props.link}>{props.linkText}</NavLink></p>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <a to={navLink} href={navLink} target={target} rel="noreferrer">{linkText}</a>
         </div>
     );
 };
