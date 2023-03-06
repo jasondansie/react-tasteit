@@ -6,7 +6,7 @@ const Button = ({ title, description, navLink, target, linkText }) => {
         <div className={classes.button}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a to={navLink} href={navLink} target={target} rel="noreferrer">{linkText}</a>
+            <a href={navLink} target={target} rel="noreferrer">{linkText}</a>
         </div>
     );
 };
