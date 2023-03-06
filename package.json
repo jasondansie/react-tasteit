@@ -1,7 +1,6 @@
 {
   "name": "react-tasteit",
   "version": "0.1.0",
-  "homepage": "http://jasondansie.github.io/tasteit",
   "private": true,
   "jest": {
     "verbose": true,
