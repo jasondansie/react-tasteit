@@ -1,8 +1,12 @@
-const express = require('express')
-const app = express()
-const port = 3040
+const express = require('express');
 
 const cors = require('cors');
+const severless = require('serverless-http');
+
+const app = express();
+const port = 3040
+
+
 
 const { getAllRecipes, getRecipe, addToStorage } = require('./storage/recipeStorage');
 
@@ -28,3 +32,5 @@ app.post('/input', (req, res) => {
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)
 })
+
+module.exports.handler = severless(app);
