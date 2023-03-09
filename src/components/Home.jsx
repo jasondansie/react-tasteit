@@ -24,7 +24,7 @@ const Home = () => {
                         title="Browse Recipes"
                         description="Find all your favorites in the collection. You can search recipes based on name or country."
                         linkText="All recipes"
-                        navLink="/recipes"
+                        refLink="/recipes"
                     />
                     <Button
                         title="Add recipes"
@@ -36,7 +36,7 @@ const Home = () => {
                         title="Want to know more about our projects?"
                         description="Visit our programme homepage."
                         linkText="Business College Helsinki hompage"
-                        navLink="http://en.bc.fi"
+                        refLink="http://en.bc.fi"
                         target="_blank"
                     />
                 </div>

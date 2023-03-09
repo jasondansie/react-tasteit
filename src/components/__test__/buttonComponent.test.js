@@ -10,7 +10,7 @@ test("Checks if the correct text input gets to the button component",() => {
         title="Browse Recipes"
         description="Find all your favorites in the collection."
         linkText="All recipes"
-        navLink="/recipes"
+        refLink="/recipes"
         
     />, root);
 

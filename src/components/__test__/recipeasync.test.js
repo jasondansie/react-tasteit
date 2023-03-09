@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import axios from 'axios';
-import Recipes from '../Recipes';
+import '@testing-library/jest-dom/extend-expect';
+import Card from '../Card';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('axios');
 
@@ -27,13 +29,22 @@ const mockData = {
 
 
 describe('Recipes', () => {
-  test('renders recipes component and displays data from the api call', async () => {
+  it('renders recipes component and displays data from the api call', async () => {
 
     axios.get.mockResolvedValueOnce({ data: mockData });
+    
+    render(<BrowserRouter>
+        <Card
+          key={mockData.id}
+          flag={mockData.flag}
+          image={mockData.image}
+          title={mockData.title}
+          link={`/SingleRecipe/${mockData.id}`}
+         />
+      </BrowserRouter>
+    );
 
-    render(<Recipes />);
-
-    const buttonElement = await screen.findByText('bread');
+    const buttonElement = await  screen.findByText('Show More');
 
     expect(buttonElement).toBeInTheDocument();
   });

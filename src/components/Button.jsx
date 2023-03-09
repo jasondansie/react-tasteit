@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './Button.module.css'
 
-const Button = ({ title, description, navLink, target, linkText }) => {
+const Button = ({ title, description, refLink, target, linkText }) => {
     return (
         <div className={classes.button}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <a href={navLink} target={target} rel="noreferrer">{linkText}</a>
+            <a href={refLink} target={target} rel="noreferrer">{linkText}</a>
         </div>
     );
 };
