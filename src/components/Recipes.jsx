@@ -5,7 +5,6 @@ import classes from './Recipes.module.css'
 
 const Recipes = () => {
     const [data, setData] = useState([]);
-    const [recipeList, setRecipeList] = useState([]);
     const [search, setSearch] = useState({
         string: '',
     });
@@ -15,7 +14,6 @@ const Recipes = () => {
             .then(
                 (res) => {
                     setData(res.data);
-                    setRecipeList(res.data);
                 });
     }, []);
 
@@ -23,26 +21,6 @@ const Recipes = () => {
         setSearch({
             string: e.target.value,
         });
-        let foundRecipe = data.filter(recipe =>
-            recipe.title.includes(search.string));
-
-        setRecipeList(foundRecipe);
-
-        if (search.string.length === 1) {
-            setRecipeList(data);
-        }
-    }
-
-    const dispalyRecipe = () => {
-        return recipeList.map((card) => (
-            <Card
-                key={card.id}
-                flag={card.flag}
-                image={card.image}
-                title={card.title}
-                link={`/SingleRecipe/${card.id}`}
-            />
-        ))
     }
 
     return (
@@ -53,7 +31,18 @@ const Recipes = () => {
                 <input onChange={(e) => searchHandler(e)} name="search"></input>
             </div>
             <div className={classes.cards}>
-                {dispalyRecipe()}
+                {
+                    data.filter(recipe =>
+                        recipe.title.includes(search.string)).map((card) => (
+                            <Card
+                                key={card.id}
+                                flag={card.flag}
+                                image={card.image}
+                                title={card.title}
+                                link={`/SingleRecipe/${card.id}`}
+                            />
+                        ))
+                }
             </div>
         </div>
     );
