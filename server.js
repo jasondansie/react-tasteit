@@ -1,7 +1,7 @@
 const express = require('express');
 
 const cors = require('cors');
-const severless = require('serverless-http');
+const serverless = require('serverless-http');
 
 const app = express();
 const port = 3040
@@ -33,4 +33,4 @@ app.listen(port, () => {
   console.log(`Server started on port ${port}`)
 })
 
-module.exports.handler = severless(app);
+module.exports.handler = serverless(app);

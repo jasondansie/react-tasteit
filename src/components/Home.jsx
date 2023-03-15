@@ -24,13 +24,13 @@ const Home = () => {
                         title="Browse Recipes"
                         description="Find all your favorites in the collection. You can search recipes based on name or country."
                         linkText="All recipes"
-                        refLink="/recipes"
+                        refLink="/Recipes"
                     />
                     <Button
                         title="Add recipes"
                         description="Recipes from your country missing? No worries, add on!"
                         linkText="Add a recipe"
-                        navLink="/Form"
+                        refLink="/Form"
                     />
                     <Button
                         title="Want to know more about our projects?"
